@@ -20,8 +20,8 @@ var votoEmBranco = false
 
 var BBB = null
 
-ajax('etapas.json', 'GET', (response) => {
-  etapas = JSON.parse(response)
+ajax('api/etapas.php', 'GET', (response) => {
+  etapas = JSON.parse(response)['etapas']
   console.log(etapas)
 
   comecarEtapa()
@@ -199,7 +199,7 @@ function confirmar() {
   let etapa = etapas[etapaAtual]
 
   if (numeroDigitado.length == etapa['numeros']) {
-    if (etapa['candidatos'][numeroDigitado]) {
+    if (true) { // (etapa['candidatos'][numeroDigitado]) {
       // Votou em candidato
       votos.push({
         'etapa': etapa['titulo'],
