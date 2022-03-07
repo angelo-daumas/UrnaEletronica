@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['api_0',['api',['../namespaceapi.html',1,'']]],
-  ['candidatos_1',['candidatos',['../namespaceapi_1_1candidatos.html',1,'api']]],
-  ['etapas_2',['etapas',['../namespaceapi_1_1etapas.html',1,'api']]]
+  ['admin_0',['admin',['../namespaceapi_1_1admin.html',1,'api']]],
+  ['api_1',['api',['../namespaceapi.html',1,'']]],
+  ['candidatos_2',['candidatos',['../namespaceapi_1_1candidatos.html',1,'api']]],
+  ['etapas_3',['etapas',['../namespaceapi_1_1etapas.html',1,'api']]],
+  ['gitpull_4',['gitpull',['../namespaceapi_1_1admin_1_1gitpull.html',1,'api::admin']]]
 ];
