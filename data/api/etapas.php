@@ -6,15 +6,13 @@
 	 */ 
 namespace api\etapas;
 
+    include $_SERVER['DOCUMENT_ROOT'] . "/php/utils.php";
+
  	/**
 	 * Envia uma query SQL à base de dados para obter as etapas.
 	 */
 	function get_etapas(): ?array {
-        $mysqli = new \mysqli("db","root","example","urnaeletronica");
-
-        if ($mysqli -> connect_errno) {
-           throw new \mysqli_sql_exception('Unable to open a connection.');
-        };
+        $mysqli = \utils\get_db_connection();
 
         $etapas = [];
         if($result = $mysqli -> query("SELECT nome AS titulo, qtd_digitos AS numeros FROM cargos ORDER BY ordem_votacao")){

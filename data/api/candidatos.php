@@ -6,6 +6,8 @@
 	 */ 
 namespace api\candidatos;
 
+	include $_SERVER['DOCUMENT_ROOT'] . "/php/utils.php";
+
  	/**
 	 * @param $cargo
 	 *  O cargo para o qual está se candidatando como vice.
@@ -15,11 +17,7 @@ namespace api\candidatos;
 	 *  Dados do vice-candidato com as colunas do banco de dados.
 	 */
 	function get_vice(string $cargo, int $codigo): ?array {
-		$mysqli = new \mysqli("db","root","example","urnaeletronica");
-
-		if ($mysqli -> connect_errno) {
-			throw new \mysqli_sql_exception('Unable to open a connection.');
-		};
+		$mysqli = \utils\get_db_connection();
 
 		$stmt = $mysqli -> prepare("SELECT nome, partido FROM vices WHERE (cargo, codigo) = (?, ?)");
 		$stmt->bind_param('si', $cargo, $codigo);
@@ -49,11 +47,7 @@ namespace api\candidatos;
 	 *  Dados do candidato com as colunas do banco de dados.
 	 */
 	function get_candidato(string $cargo, int $codigo): ?array {
-		$mysqli = new \mysqli("db","root","example","urnaeletronica");
-
-		if ($mysqli -> connect_errno) {
-			throw new \mysqli_sql_exception('Unable to open a connection.');
-		};
+		$mysqli = \utils\get_db_connection();
 
 		$stmt = $mysqli -> prepare("SELECT * FROM candidatos WHERE (cargo, codigo) = (?, ?)");
 		$stmt->bind_param('si', $cargo, $codigo);

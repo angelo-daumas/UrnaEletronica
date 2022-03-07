@@ -51,13 +51,9 @@
          <tbody>
             
             <?php
-               $mysqli = new \mysqli("db","root","example","urnaeletronica");
+               include $_SERVER['DOCUMENT_ROOT'] . "/php/utils.php";
+               $mysqli = \utils\get_db_connection();
 
-               if ($mysqli -> connect_errno) {
-                  throw new \mysqli_sql_exception('Unable to open a connection.');
-               };
-
-               
                if($result = $mysqli -> query("SELECT * FROM candidatos")){
                   while($row = $result->fetch_assoc()) 
                   { 
