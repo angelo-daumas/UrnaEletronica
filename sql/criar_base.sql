@@ -1,8 +1,16 @@
 CREATE TABLE candidatos (
   nome varchar(200) NOT NULL,
   codigo int NOT NULL,
-  cargo varchar(99) NOT NULL,
-  partido varchar(10) NOT NULL,
+  cargo varchar(20) NOT NULL,
+  partido varchar(99) NOT NULL,
+  PRIMARY KEY (codigo, cargo)
+);
+
+CREATE TABLE vices (
+  nome varchar(200) NOT NULL,
+  codigo int NOT NULL,
+  cargo varchar(20) NOT NULL,
+  partido varchar(99) NOT NULL,
   PRIMARY KEY (codigo, cargo)
 );
 

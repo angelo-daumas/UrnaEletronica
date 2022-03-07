@@ -1,4 +1,5 @@
 TRUNCATE TABLE candidatos;
+TRUNCATE TABLE vices;
 
 INSERT INTO candidatos (cargo, codigo, nome, partido)
 VALUES 
@@ -14,3 +15,11 @@ VALUES
     ('prefeito', 45, 'Dr. Francisco', 'PSC'),
     ('prefeito', 54, 'Zé Lopes', 'PPL'),
     ('prefeito', 65, 'Lindomar Pescador', 'PC do B');
+
+INSERT INTO vices (cargo, codigo, nome, partido)
+VALUES 
+    ('prefeito', 12, 'Arão', 'PDT'),
+    ('prefeito', 15, 'Biga', 'MDB'),
+    ('prefeito', 45, 'João Rodrigues', 'PSC'),
+    ('prefeito', 54, 'Fracisca Ferreira Ramos', 'PPL'),
+    ('prefeito', 65, 'Malú', 'PC do B');

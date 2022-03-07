@@ -8,6 +8,40 @@ namespace api\candidatos;
 
  	/**
 	 * @param $cargo
+	 *  O cargo para o qual está se candidatando como vice.
+	 * @param $codigo
+	 *  O código do candidato desse vice.
+	 * @retval array
+	 *  Dados do vice-candidato com as colunas do banco de dados.
+	 */
+	function get_vice(string $cargo, int $codigo): ?array {
+		$mysqli = new \mysqli("db","root","example","urnaeletronica");
+
+		if ($mysqli -> connect_errno) {
+			throw new \mysqli_sql_exception('Unable to open a connection.');
+		};
+
+		$stmt = $mysqli -> prepare("SELECT nome, partido FROM vices WHERE (cargo, codigo) = (?, ?)");
+		$stmt->bind_param('si', $cargo, $codigo);
+		if (!$stmt->execute()) {
+			$mysqli -> close();
+			throw new \mysqli_sql_exception('Unable to execute SQL query.');
+		}
+
+		$result = $stmt->get_result();
+		# Precisamos ter certeza que apenas um candidato é retornado.
+		if ($result -> num_rows == 1) {
+			$vice = $result->fetch_assoc();
+		} else { 
+			$vice = null;
+		};
+
+		$mysqli -> close();
+		return $vice;
+	}
+
+ 	/**
+	 * @param $cargo
 	 *  O cargo para o qual está se candidatando.
 	 * @param $codigo
 	 *  O código do candidato.
@@ -32,6 +66,7 @@ namespace api\candidatos;
 		# Precisamos ter certeza que apenas um candidato é retornado.
 		if ($result -> num_rows == 1) {
 			$candidato = $result->fetch_assoc();
+			$candidato['vice'] = get_vice($cargo, $codigo);
 		} else { 
 			$candidato = null;
 		};
