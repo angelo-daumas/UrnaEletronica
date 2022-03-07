@@ -12,7 +12,7 @@ namespace utils;
 	 *  Retorna se o servidor é local ou de produção.
 	 */
 	function is_production():bool {
-        return $_SERVER['HTTP_HOST'] == 'localhost';
+        return $_SERVER['HTTP_HOST'] == 'urna.talzer.net';
     }
 
     function get_db_address():string {
