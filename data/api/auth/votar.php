@@ -1,6 +1,6 @@
 <?php /**
 	 * Este endpoint irá receber um query string com o cargo e o código do candidato,
-	 * retornando como JSON os dados do candidato encontrados no banco de dados.
+	 * depois irá realizar a votação nesse candidato usando uma conuslta SQL ao banco.
 	 *
 	 * @author Ângelo Daumas <angelodaumas@dcc.ufrj.br>
 	 */ 
@@ -13,8 +13,6 @@ namespace api\auth\vote;
 	 *  O cargo para o qual está se candidatando.
 	 * @param $codigo
 	 *  O código do candidato.
-	 * @retval array
-	 *  Dados do candidato com as colunas do banco de dados.
 	 */
 	function votar_em_candidato(string $cargo, int $codigo): void {
 		$mysqli = \utils\get_db_connection();
