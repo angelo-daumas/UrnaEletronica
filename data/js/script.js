@@ -112,14 +112,14 @@ function atualizarInterface(etapa, candidato) {
     rPartidoPolitico.querySelector('span').innerHTML = candidato['partido']
 
     rCandidato.style.display = 'block'
-    rCandidato.querySelector('.imagem img').src = `img/${candidato['foto']}`
+    rCandidato.querySelector('.imagem img').src = `img/candidatos/${candidato['cargo']}_${candidato['codigo']}.jpg`
     rCandidato.querySelector('.cargo p').innerHTML = etapa['titulo']
     
     if (vice) {
       rNomeVice.style.display = 'block'
       rNomeVice.querySelector('span').innerHTML = vice['nome']
       rVice.style.display = 'block'
-      rVice.querySelector('.imagem img').src = `img/${vice['foto']}`
+      rVice.querySelector('.imagem img').src = `img/candidatos/vices/${candidato['cargo']}_${candidato['codigo']}.jpg`
     } else {
       rNomeVice.style.display = 'none'
     }
