@@ -3,6 +3,7 @@ CREATE TABLE candidatos (
   codigo int NOT NULL,
   cargo varchar(20) NOT NULL,
   partido varchar(99) NOT NULL,
+  qtd_votos int NOT NULL DEFAULT 0,
   PRIMARY KEY (codigo, cargo)
 );
 

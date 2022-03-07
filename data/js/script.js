@@ -95,7 +95,7 @@ function buscarCandidato() {
     }
   }
 
-  link = 'api/candidatos.php?cargo=' + etapa['titulo'] + '&codigo=' + numeroDigitado;
+  let link = 'api/candidatos.php?cargo=' + etapa['titulo'] + '&codigo=' + numeroDigitado;
   console.log(link);
   ajax(link, 'GET', (response) => atualizarInterface(etapa, JSON.parse(response)['candidato']))
 }
@@ -204,12 +204,15 @@ function confirmar() {
   let etapa = etapas[etapaAtual]
 
   if (numeroDigitado.length == etapa['numeros']) {
-    if (true) { // (etapa['candidatos'][numeroDigitado]) {
+    if (true) { // (etapa['candidatos'][numeroDigitado]) { rCandidato.style.display = 'block'
       // Votou em candidato
       votos.push({
         'etapa': etapa['titulo'],
         'numero': numeroDigitado
       })
+      let link = 'api/auth/votar.php?cargo=' + etapa['titulo'] + '&codigo=' + numeroDigitado;
+      console.log(link);
+      ajax(link, 'GET', (response) => {})
       console.log(`Votou em ${numeroDigitado}`)
     } else {
       // Votou nulo

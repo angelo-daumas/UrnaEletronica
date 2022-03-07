@@ -60,7 +60,7 @@
                      echo '<tr style="height: 22px;">';
                      echo '<td style="min-width: 140px; height: 22px; width: 140px;">'.$row['nome'].'</td>';
                      echo '<td style="height: 22px; width: 50px;">'.$row['cargo'].'</td>';
-                     echo '<td style="height: 22px; width: 49px;">'.'0'.'</td>';
+                     echo '<td style="height: 22px; width: 49px;">'.$row['qtd_votos'].'</td>';
                      echo '</tr>';
                   }
                }
