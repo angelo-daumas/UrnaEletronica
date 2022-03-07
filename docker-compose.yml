@@ -1,0 +1,25 @@
+# Use root/example as user/password credentials
+version: '3.7'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  nginx:
+    image: wyveo/nginx-php-fpm
+    ports:
+      - 1337:80
+    volumes:
+      - ./data:/usr/share/nginx/html:ro
+      - ./php.ini:/etc/php/8.0/fpm/php.ini
