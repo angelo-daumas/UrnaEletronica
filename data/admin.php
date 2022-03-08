@@ -4,35 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
-      <style>
-         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-         body { 
-            font-family: 'Roboto', sans-serif;
-         }
-
-         .editorDemoTable {
-         background-color: #FFF8C9;
-         border-spacing: 0;
-         }
-         .editorDemoTable td{
-         border: 1px solid #777;
-         margin: 0 !important;
-         padding: 2px 3px;
-         }
-         .editorDemoTable thead {
-         background-color: #2E6C80;
-         color: #FFF;
-         }
-         .editorDemoTable thead td {
-         font-weight: bold;
-         font-size: 13px;
-         }
-         .imageRight {
-         float: right;
-         margin: 0 0 5px 20px;
-         }
-      </style>
+      <link rel="stylesheet" href="css/paginas.css">
    </head>
    <body>
       <h1 style="color: #4485b8;">Administra&ccedil;&atilde;o das Elei&ccedil;&otilde;es 2022 🇧🇷</h1>
