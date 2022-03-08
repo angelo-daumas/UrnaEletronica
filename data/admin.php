@@ -5,6 +5,19 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
       <link rel="stylesheet" href="css/paginas.css">
+      <script src="js/util.js"></script>
+      <script type="text/javascript">
+         /** Interleaves two arrays.
+          *
+          *  Teste
+          */
+         function zerarVotos() {
+            let link = 'api/admin/zerarvotos.php';
+            console.log(link);
+            ajax(link, 'GET', (response) => {location.reload()})
+            
+         }
+      </script>
    </head>
    <body>
       <h1 style="color: #4485b8;">Administra&ccedil;&atilde;o das Elei&ccedil;&otilde;es 2022 🇧🇷</h1>
@@ -43,7 +56,7 @@
       </table>
       <hr />
       <p><strong>Aten&ccedil;&atilde;o! </strong>Clicando no bot&atilde;o abaixo, a contagem dos votos ser&aacute; zerada. Extrema cautela &eacute; necess&aacute;ria em sua opera&ccedil;&atilde;o.</p>
-      <p>&nbsp;<button style="background-color: #4485b8; color: #fff; display: inline-block; padding: 2px 8px; font-weight: bold; border-radius: 5px;">Zerar votos coletados</button> </p>
+      <p>&nbsp;<button onclick="zerarVotos()" style="background-color: #4485b8; color: #fff; display: inline-block; padding: 2px 8px; font-weight: bold; border-radius: 5px;">Zerar votos coletados</button> </p>
       <hr />
       <p><em>Qualquer aviso legal nesta p&aacute;gina &eacute; para prop&oacute;sitos de simula&ccedil;&atilde;o e não reflete qualquer tipo de posi&ccedil;&atilde;o legal.<br /></em></p>
    </body>
